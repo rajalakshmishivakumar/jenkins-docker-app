@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef2f7;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 750px;
+            margin: auto;
+        }
+        h1 { color: #2457a7; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th { background: #2457a7; color: white; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Student Management System</h1>
+    <p>Deployed using Jenkins and Docker CI/CD</p>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.id }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.course }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
